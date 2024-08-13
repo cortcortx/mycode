@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-""" Naruto quiz """
+""" Naruto quiz:
+    For each of the 5 questions, you are prompted to enter T or F for the True/False questions
+    And A, B, C or D for the multiple choice questions.
+    At the end, your total points for every correct answer is calculated."""
 
 points = 0
 questions = 0
