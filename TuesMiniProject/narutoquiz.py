@@ -7,7 +7,7 @@ invalidresponse = "Invalid! Please only type "
 
 print("\n\nQuiz: How well do you know Naruto?\n\n")
 
-while questions < 3:
+while questions < 5:
 
     if questions == 0:
         print("Q1:\n[T/F] Kakashi has another mask under his original one.")
@@ -44,7 +44,36 @@ while questions < 3:
             print("Correct! You sure know your tailed beasts!\n")
             points += 1
         elif answer == "A" or answer == "B" or answer == "D":
-            print("Wrong! The Nine Tails within Naruto is named Kurama.\n")
+            print("Wrong! The Nine-Tails Beast sealed within Naruto is called Kurama.\n")
+        else:
+            print(invalidresponse + "A, B, C or D\n")
+            continue
+
+    elif questions == 3:
+        print("Q4:\nWhat technique does Naruto learn that finally allows him to pass his ninja graduation exams?")
+        print(" [A] The Rasengan \n [B] The Multiple Shadow Clone Technique \n [C] The Clone Technique \n [D] Tailed Beast Powers\n")
+        answer = input("> ").upper()
+        if answer == 'B':
+            print("Correct! You've seen episode one I see!\n")
+            points += 1
+        elif answer == "A" or answer == "C" or answer == "D":
+            print("Wrong! After failing the graduation exam due to his inability to perform the Clone Technique, " +
+            "Naruto steals a forbidden scroll and learns the Multiple Shadow Clone Technique. Seeing this, Iruka Umino allowed Naruto to pass.\n")
+        else:
+            print(invalidresponse + "A, B, C or D\n")
+            continue
+
+    elif questions == 4:
+        print("Q5:\nWhat was Kushina's nickname?")
+        print(" [A] The Red Hot-Blooded Habanero \n [B] The Red Hot-Headed Habanero \n [C] The Red-Haired Habanero \n" +
+         " [D] The Red Hot-Tempered Habanero\n")
+        answer = input("> ").upper()
+        if answer == 'A':
+            print("Correct! You are on fire!\n")
+            points += 1
+        elif answer == "B" or answer == "C" or answer == "D":
+            print("Wrong! When Kushina first came to the village, she was ridiculed by other kids." +
+            " After getting her revenge on them, she was given the nickname Red Hot-Blooded Habanero.\n")
         else:
             print(invalidresponse + "A, B, C or D\n")
             continue
@@ -53,9 +82,9 @@ while questions < 3:
 
 print("Total points awarded: " + str(points))
 
-if points == 3:
+if points == 5:
     print("You should be so proud of yourself NERD! :)")
-elif points == 2 or points == 1:
-    print("Meh. You need to go back through all 1,000+ episodes.")
+elif points == 0:
+    print("A disgrace! I can tell you've never watched a single episode.")
 else:
-    print("I can tell you've never watched a single episode.")
+    print("Meh. You need to back through all 1,000+ episodes and try again.")
