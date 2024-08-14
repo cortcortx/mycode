@@ -3,7 +3,8 @@
     For each of the 5 questions, you are prompted to enter T or F for the True/False questions
     And A, B, C or D for the multiple choice questions.
     At the end, your total points for every correct answer is calculated."""
-
+    
+# attempt a try catch
 def narutoQuiz():
     points = 0
     questions = 0
@@ -20,6 +21,7 @@ def narutoQuiz():
     print("Quiz: How well do you know Naruto?\n\n")
     
     while questions < 5:
+        
         if questions == 0:
             print("Q1:\n[T/F] Kakashi has another mask under his original one.")
             print(" [T] True\n [F] False\n")
@@ -87,18 +89,17 @@ def narutoQuiz():
                 " After getting her revenge on them, she was given the nickname Red Hot-Blooded Habanero.\n")
             else:
                 print(invalidresponse + "A, B, C or D\n")
-                continue
     
         questions += 1
     
-    print("Total points awarded: " + str(points))
+    print(f"Total points awarded: {points}")
     
     if points == 5:
         print("You should be so proud of yourself NERD! :)")
     elif points == 0:
         print("A disgrace! I can tell you've never watched a single episode.")
     else:
-        print("Meh. You need to back through all 1,000+ episodes and try again.")
+        print("Meh. You should go back through all 1,000+ episodes and try again.")
 
 if __name__ == "__main__":
     narutoQuiz()
