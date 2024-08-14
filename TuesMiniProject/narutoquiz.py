@@ -5,6 +5,7 @@
     At the end, your total points for every correct answer is calculated."""
     
 # attempt a try catch
+# separate questions into a separate file
 def narutoQuiz():
     points = 0
     questions = 0
