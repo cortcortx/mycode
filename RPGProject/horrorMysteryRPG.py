@@ -10,7 +10,13 @@ def showInstructions():
   #print a main menu and the commands
  
   print('''
-RPG Mystery Game
+Hidden Truths: The Escape
+Backstory:
+You are Sarah, trapped in a marriage that hides dark secrets. Your husband, Mark, once seemed perfect, 
+but you've uncovered a disturbing diary entry revealing his sinister plans against you. Now, you must gather evidence 
+hidden around the house to prove his true nature and escape before he catches you.
+Mark is growing suspicious, and his movements around the house are unpredictable. Every room holds a clue, 
+but time is running out. Can you collect the evidence and escape, or will you become another victim of his twisted scheme
 
 ========
 
