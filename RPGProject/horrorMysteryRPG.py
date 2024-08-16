@@ -74,7 +74,6 @@ def moveHusband():
  
     husbandRoom = random.choice(possible_rooms)
 
-    print(f"Husband moved to: {husbandRoom}")
  
 
 class Wife():
