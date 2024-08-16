@@ -18,15 +18,19 @@ def main():
     for singlebook in got_dj:
         ## display the names of each book
         ## all of the below statements do the same thing
-        #print(singlebook["name"] + ",", "pages -", singlebook["numberOfPages"])
-        #print("{}, pages - {}".format(singlebook["name"], singlebook["numberOfPages"]))
+        print(singlebook["name"] + ",", "pages -", singlebook["numberOfPages"])
+        print("{}, pages - {}".format(singlebook["name"], singlebook["numberOfPages"]))
         print(f"{singlebook['name']}, pages - {singlebook['numberOfPages']}")
         print(f"\tAPI URL -> {singlebook['url']}\n")
         # print ISBN
         print(f"\tISBN -> {singlebook['isbn']}\n")
         print(f"\tPUBLISHER -> {singlebook['publisher']}\n")
         print(f"\tNo. of CHARACTERS -> {len(singlebook['characters'])}\n")
+  
 
+   
+    
+     
+      
 if __name__ == "__main__":
     main()
-
