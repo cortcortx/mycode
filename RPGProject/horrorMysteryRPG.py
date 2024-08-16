@@ -5,25 +5,25 @@ import random
  
  
  
- 
- 
- 
 def showInstructions():
  
   #print a main menu and the commands
  
   print('''
- 
 RPG Mystery Game
- 
+
 ========
- 
+
 Commands:
- 
-  go [direction]
- 
-  get [item]
- 
+
+  go [direction]  - Move between rooms
+  get [item]      - Pick up items
+
+Navigate: Use go [direction] to move between rooms.
+Collect Evidence: Use get [item] to pick up items that can be used as evidence.
+Escape Encounters: Avoid or escape from your husband if you encounter him.
+Unlock Rooms: Find keys to access locked areas.
+Win: Gather all the evidence and escape to the garden to win.
 ''')
  
  
@@ -56,7 +56,7 @@ def showStatus():
  
  
  
-# TODO Add addtl methods, i.e interrogate, block,
+
 # the monster/husband can randomly appear in any room of the home
 def moveHusband():
  
@@ -67,12 +67,14 @@ def moveHusband():
     #possible_rooms.remove(currentRoom)
  
     husbandRoom = random.choice(possible_rooms)
+
+    print(f"Husband moved to: {husbandRoom}")
  
 
 class Wife():
-  #wife has 2 chances to be able to escape her husband if caught before completing the game
+  #wife has 3 chances to be able to escape her husband if caught before completing the game
   def __init__(self):
-    self.escape = 3
+    self.escape = 2
 
   def escapeHusband(self):
       # If a player enters a room with husband 
@@ -89,11 +91,13 @@ class Wife():
 
 #an evidence bag, which is initially empty
  
+#add functionality to evidence,  diary entires, text messages, etc
+ 
 evidence = []
  
  
  
-# a dictionary linking a room to other rooms
+#A dictionary linking a room to other rooms
  
 rooms = {
  
@@ -115,6 +119,8 @@ rooms = {
                   'north' : 'Hall',
  
                   'item'  : 'key',
+
+                  'itemdesc': "A slightly worn key that fits the bedroom door. It'\s the only way to access the room where Mark has hidden some of his darkest secrets."
  
                 },
  
@@ -126,15 +132,12 @@ rooms = {
  
                   'item' : 'photo',
                 
-                  'itemdesc' : 'A photo of William and his former housemaid, Annalise was taken on the night of October 21, 2010 on their very first night out together '
+                  'itemdesc' : 'A faded photograph showing Mark with a woman you don’t recognize. The smiles are unsettling, and the date on the back is recent.'
                },
  
             'Garden' : {
  
                   'north' : 'Dining Room',
- 
-                  'item'  : 'key'
- 
                },
  
             'Bedroom' : {
@@ -144,6 +147,8 @@ rooms = {
                 'north': 'Closet',
  
                 'item': 'diary',
+
+                'itemdesc': "An old leather-bound diary with entries that reveal a different side of Mark - a side he/'s kept hidden. The last few pages are particularl chilling.",
  
                 'requires': 'key'
  
@@ -153,7 +158,9 @@ rooms = {
  
                 'south': 'Bedroom',
  
-                'item' : 'cell phone'
+                'item' : 'cell phone',
+
+                'itemdesc': "An unmarked cell phone with a series of incriminating text messages and voicemails. The battery is low, but it could be the key to your escape."
  
                 }  
  
@@ -166,12 +173,10 @@ rooms = {
 currentRoom = 'Hall'
 #start husband in random room
 husbandRoom = random.choice(list(rooms.keys()))
- 
- 
+player = Wife()
  
  
 showInstructions()
- 
 
  
  
@@ -247,8 +252,11 @@ while True:
       evidence += [move[1]]
  
       #display a helpful message
- 
-      print(move[1] + ' got!')
+      if 'itemdesc' in rooms[currentRoom]:
+        print(f"Description: {rooms[currentRoom]['itemdesc']}")
+      print(move[1] + ' has been placed in your evidence bag!')
+
+
  
       #delete the item from the room
  
