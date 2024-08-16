@@ -194,4 +194,20 @@ def showInstructions():
                     print('Can\'t get ' + move[1] + '!')
 
 
+            #Define how a player can win
+
+            if currentRoom == 'Garden' and 'key' in evidence and 'photo' in evidence and 'cell phone' in evidence and 'diary' in evidence:
+                print('You have escaped the house with all of the evidence you will need to provide to the authorities...\n' +
+                'YOUR DIVORCE IS GRANTED and YOUR [EX]-HUSBAND IS NOW IN JAIL.\nJustice has been served.')
+
+                break #ends game
+
+
+            #if a player enters a room with husband
+
+            if currentRoom == husbandRoom :
+                print('Your husband has got you... GAME OVER!')
+
+                break#ends game
+
 
