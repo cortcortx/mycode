@@ -209,8 +209,6 @@ while True:
 
   if move[0] == 'go':
 
-
-
     if move[1] in rooms[currentRoom]:
       nextRoom = rooms[currentRoom][move[1]]
 
@@ -224,7 +222,6 @@ while True:
 
     #there is no door (link) to the new room
     else:
-
         print('You can\'t go that way!')
 
 
